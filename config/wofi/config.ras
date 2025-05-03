@@ -1,0 +1,35 @@
+/* ~/.config/wofi/config.rasi */
+
+configuration {
+    show: run;
+    width: 35%;
+    height: 30%;
+    location: center;
+    prompt: "Soul Search...";
+    filter_rate: 100;
+    allow_markup: true;
+    no_actions: true;
+    halign: fill;
+    orientation: vertical;
+    content_halign: fill;
+    insensitive: true;
+    allow_images: true;
+    image_size: 24;
+    dynamic_lines: true;
+    lines: 10;
+    line_wrap: off;
+    spacing: 2;
+}
+
+/* Elementos específicos para tema Soul Eater */
+inputbar {
+    children: [prompt, entry];
+}
+
+prompt {
+    background-color: rgba(102, 0, 153, 0.8);
+    color: #ffccff;
+    padding: 5px 10px;
+    border: 2px solid #ff99ff;
+    margin-right: 5px;
+}

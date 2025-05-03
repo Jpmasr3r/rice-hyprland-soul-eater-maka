@@ -1,0 +1,103 @@
+{
+  "position": "top",
+  "height": 45,
+  "layer": "bottom",
+  "margin": "-5",
+  "spacing": 3,
+  "modules-left": [
+    "custom/moon",
+    "hyprland/workspaces",
+    "custom/sun"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "custom/media",
+    "pulseaudio",
+    "tray"
+  ],
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "format-icons": {
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "零",
+      "urgent": "危"
+    }
+  },
+  "clock": {
+    "interval": 1,
+    "format": "{:%H : %M : %S}",
+    "format-alt": "{:%A, %d - %B - %Y (%H : %M)}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon}🔵 {volume}%",
+    "format-muted": "🔇 Muted",
+    "format-icons": {
+      "headphone": "🎧",
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "scroll-step": 5,
+    "on-click": "pavucontrol"
+  },
+  "network": {
+    "format-wifi": " {essid}",
+    "format-ethernet": " {ipaddr}",
+    "format-disconnected": "⚠ No Connection",
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "format-linked": " {ifname} (No IP)"
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "tray": {
+    "spacing": 10
+  },
+  "custom/moon": {
+    "format": "☾",
+    "interval": 60,
+    "tooltip": false
+  },
+  "custom/sun": {
+    "format": "☀",
+    "interval": 60,
+    "tooltip": false
+  },
+  "custom/media": {
+    "format": "🎼 {}",
+    "exec": "playerctl -p firefox metadata --format '{{ artist }} - {{ title }}'",
+    "on-click": "~/.config/hypr/music-notify.sh",
+    "interval": 5,
+    "max-length": 30,
+    "escape": true
+  }
+}

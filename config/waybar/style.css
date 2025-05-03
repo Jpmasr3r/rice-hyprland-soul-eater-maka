@@ -1,0 +1,184 @@
+* {
+    all: unset;
+    font-family: "Manga Temple", "Comic Sans MS", fantasy;
+    font-weight: bold;
+}
+
+#waybar {
+    background-image: url("./images/background.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: #e0a0ff;
+    margin: -5px;
+}
+
+/* Workspaces - estilo mangá */
+#workspaces {
+    padding: 0 5px;
+    margin: 5px 0 5px 15px;
+}
+
+#workspaces button {
+    color: #c090ff;
+    font-size: 18px;
+    padding: 0 8px;
+    background: rgba(70, 0, 110, 0.7);
+    border: 2px solid #a050ff;
+    border-radius: 0;
+    box-shadow: 2px 2px 0 #330044;
+    margin-right: 5px;
+}
+
+#workspaces button.active {
+    background: #9900ff;
+    color: #ffffff;
+    border-bottom: 3px solid #ff66ff;
+    text-shadow: 0 0 5px #ffffff;
+}
+
+#workspaces button.urgent {
+    color: #ff0066;
+    animation: blink 1s infinite;
+}
+
+/* Relógio - estilo destaque */
+#clock {
+    background: rgba(102, 0, 153, 0.8);
+    color: #ffccff;
+    font-size: 16px;
+    padding: 0 20px;
+    margin: 5px 0;
+    border: 2px solid #ff99ff;
+    box-shadow: 3px 3px 0 #4d0066;
+    text-shadow: 1px 1px 2px #000;
+}
+
+/* Módulos da direita */
+#pulseaudio,
+#network,
+#battery,
+#tray,
+#custom-media {
+    background-color: rgba(88, 0, 132, 0.7);
+    border: 2px solid #c080ff;
+    padding: 0 15px;
+    margin: 10px 5px 15px 10px;
+    box-shadow: 3px 3px 0 #330066;
+    font-size: 14px;
+}
+
+/* Ícones especiais */
+#custom-moon {
+    color: #aaccff;
+    font-size: 20px;
+    margin-left: 15px;
+    text-shadow: 0 0 5px #3366ff;
+}
+
+#custom-sun {
+    color: #ffcc66;
+    font-size: 20px;
+    text-shadow: 0 0 5px #ff6600;
+}
+
+/* Animações */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Tooltip estilo mangá */
+tooltip {
+    background: #440066;
+    border: 2px solid #cc99ff;
+    border-radius: 0;
+    font-family: "Manga Temple";
+    color: #ffccff;
+    padding: 5px 10px;
+    text-shadow: none;
+}
+
+#tray {
+    margin: 10px 75px 15px 10px;
+}
+
+#tray>.passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+    -gtk-icon-effect: highlight;
+    animation: pulse 1.5s infinite;
+}
+
+/* Estilo dos menus do Tray */
+#tray menu {
+    background-color: #330044;
+    border: 2px solid #cc66ff;
+    border-radius: 0;
+    padding: 5px;
+}
+
+#tray menuitem {
+    color: #e0a0ff;
+    padding: 5px 20px;
+    margin: 2px 0;
+    background: transparent;
+    border: none;
+    font-family: "Manga Temple", sans-serif;
+    font-size: 14px;
+}
+
+#tray menuitem:hover {
+    background-color: #660099;
+    color: #ffffff;
+    border-left: 3px solid #ff66ff;
+}
+
+#tray menuitem:disabled {
+    color: #555566;
+}
+
+#tray separator {
+    background-color: #cc66ff;
+    margin: 5px 0;
+}
+
+/* Animação para ícones que precisam de atenção */
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Estilo para itens de menu com ícones */
+#tray menuitem image {
+    margin-right: 10px;
+}
+
+#tray menu menuitem arrow:dir(ltr) {
+    margin-left: 10px;
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+#tray menu menuitem arrow:dir(rtl) {
+    margin-right: 10px;
+    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+}

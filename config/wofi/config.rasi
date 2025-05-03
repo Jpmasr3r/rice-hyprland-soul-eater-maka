@@ -1,0 +1,34 @@
+configuration {
+    show: drun;
+    width: 35%;
+    height: 40%;
+    location: center;
+    prompt: ">>>";
+    filter_rate: 100;
+    allow_markup: true;
+    allow_images: true;
+    image_size: 28;
+    halign: fill;
+    orientation: vertical;
+    content_halign: fill;
+    insensitive: true;
+    dynamic_lines: true;
+    lines: 8;
+    line_wrap: off;
+    spacing: 3;
+    hide_scroll: true;
+}
+
+inputbar {
+    children: [textbox-prompt-colon, entry];
+    spacing: 10px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: "斬";
+    color: #ff00ff;
+    font-size: 24px;
+    text-shadow: 0 0 5px #ff00ff;
+    margin: 0 5px 0 15px;
+}

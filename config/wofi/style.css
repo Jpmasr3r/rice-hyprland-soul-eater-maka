@@ -1,0 +1,140 @@
+/* ~/.config/wofi/style.css */
+
+window {
+    all: unset;
+    font-family: "Manga Temple", "Comic Shanns", "Comic Sans MS", fantasy;
+    background-color: rgba(10, 0, 15, 0.95);
+    border: 4px solid #5a007a;
+    border-radius: 0;
+    box-shadow: 
+        8px 8px 0 rgba(50, 0, 70, 0.6),
+        0 0 0 1px #ff00ff inset;
+    margin: 15px;
+}
+
+#input {
+    background-color: rgba(20, 0, 30, 0.9);
+    color: #e8c0ff;
+    font-size: 20px;
+    font-weight: bold;
+    border: 3px solid #8a00ff;
+    border-radius: 0;
+    padding: 12px 15px;
+    margin: 15px;
+    box-shadow: 
+        inset 3px 3px 0 #3a005a,
+        0 0 10px rgba(138, 0, 255, 0.3);
+    text-shadow: 1px 1px 2px #000;
+}
+
+#inner-box {
+    background-color: transparent;
+    margin: 0 15px 15px 15px;
+    border-top: 2px dashed #5a007a;
+}
+
+#outer-box {
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%235a007a' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+    margin: 5px;
+    padding: 10px;
+}
+
+#scroll {
+    margin: 5px;
+}
+
+#text {
+    color: #e0a0ff;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px;
+    text-shadow: 
+        1px 1px 0 #300040,
+        2px 2px 0 #000;
+}
+
+#entry {
+    padding: 10px;
+    margin: 3px 0;
+    background-color: rgba(30, 0, 45, 0.7);
+    border-left: 4px solid transparent;
+    transition: all 0.2s ease;
+}
+
+#entry:nth-child(odd) {
+    background-color: rgba(40, 0, 55, 0.7);
+}
+
+#entry:selected {
+    background-color: #5a007a;
+    border-left: 4px solid #ff00ff;
+    box-shadow: 
+        3px 3px 0 #300040,
+        inset 0 0 10px rgba(255, 0, 255, 0.3);
+}
+
+#entry > box {
+    spacing: 15px;
+}
+
+#entry image {
+    margin-right: 15px;
+    -gtk-icon-size: 28px;
+    filter: drop-shadow(1px 1px 1px #000);
+}
+
+#entry:selected image {
+    filter: 
+        drop-shadow(0 0 2px #fff)
+        drop-shadow(0 0 5px #ff00ff)
+        saturate(2);
+}
+
+#entry label {
+    color: #d8a0ff;
+    font-size: 18px;
+    font-family: "Manga Temple", "Comic Shanns", fantasy;
+    letter-spacing: 0.5px;
+}
+
+#entry:selected label {
+    color: #ffffff;
+    text-shadow: 
+        0 0 5px #ff00ff,
+        0 0 10px rgba(255, 0, 255, 0.5);
+}
+
+/* Efeito de "speed lines" */
+@keyframes speed-lines {
+    from { background-position: 0 0; }
+    to { background-position: 100px 100px; }
+}
+
+#entry:active {
+    animation: shake 0.3s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+}
+
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-3px, 0, 0); }
+    40%, 60% { transform: translate3d(3px, 0, 0); }
+}
+
+/* Tooltip estilo mangá */
+tooltip {
+    background: #200030;
+    border: 2px solid #8a00ff;
+    border-radius: 0;
+    font-family: "Manga Temple";
+    color: #e8c0ff;
+    padding: 8px 12px;
+    text-shadow: 1px 1px 0 #000;
+    box-shadow: 4px 4px 0 rgba(50, 0, 70, 0.6);
+}
+
+#input image {
+    color: #c080ff;
+    margin-right: 10px;
+}
