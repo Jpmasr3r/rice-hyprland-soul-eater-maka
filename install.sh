@@ -19,17 +19,19 @@ PACKAGES=(
     git
 )
 
+echo "Instalando pacotes"
 sudo pacman -Syu --noconfirm
 sudo pacman -S --needed --noconfirm "${PACOTES[@]}"
 
+echo "Aplicando Rice"
 sudo mkdir -p ~/.config/
 sudo cp ./config/* ~/.config/
 sudo cp ./home/* ~/
 
+echo "🔗 Criando links simbólicos em '$TARGET_DIR'..."
 chmod +x "$SCRIPT_DIR"/*
 mkdir -p "$TARGET_DIR"
 
-echo "🔗 Criando links simbólicos em '$TARGET_DIR'..."
 for script in "$SCRIPT_DIR"/*; do
     if [ -f "$script" ]; then  
         script_name=$(basename "$script")
