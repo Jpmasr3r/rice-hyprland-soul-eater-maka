@@ -28,7 +28,7 @@ sudo mkdir -p ~/.config/
 sudo cp ./config/* ~/.config/
 sudo cp ./home/* ~/
 
-echo "🔗 Criando links simbólicos em '$TARGET_DIR'..."
+echo "Criando links simbólicos em '$TARGET_DIR'..."
 chmod +x "$SCRIPT_DIR"/*
 mkdir -p "$TARGET_DIR"
 
@@ -45,3 +45,5 @@ for script in "$SCRIPT_DIR"/*; do
         echo "✅ $script_name → $target_path"
     fi
 done
+
+echo "Instalação completa. Reinicie a maquina"
